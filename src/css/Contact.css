@@ -1,0 +1,46 @@
+.contact-container .text-container {
+    position: relative;
+    padding: 40px ;
+}
+
+.contact-container .text-container h1{
+    font-size: 120px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: absolute;
+    top: -20px;
+}
+
+.contact-container .text-container h2 {
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+    color: rgb(163, 36, 36);
+}
+
+.contact-container .contactInfo {
+    padding: 40px;
+    font-size: 24px;
+    color: rgb(163, 36, 36);
+}
+
+.contact-container .contactInfo p {
+    color: black;
+}
+
+.contact-container .contactInfo-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 60vh;
+}
+
+.contact-container .contactInfo-container .contactImg {
+    height: 100%;
+    padding-right: 50px;
+}
+
+.contact-container .contactInfo-container .contactImg img {
+    height: 100%;
+}

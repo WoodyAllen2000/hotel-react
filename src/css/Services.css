@@ -1,0 +1,76 @@
+.ServicesInfo-container .text-container {
+    position: relative;
+    padding: 40px ;
+}
+
+.ServicesInfo-container .text-container h1{
+    font-size: 120px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: absolute;
+    top: -20px;
+}
+
+.ServicesInfo-container .text-container h2 {
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+    color: rgb(163, 36, 36);
+}
+
+.ServicesInfo-container .services-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+}
+
+.ServicesInfo-container .icons-container {
+    font-size: 70px;
+    color: rgb(163, 36, 36);
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.ServicesInfo-container .img-container {
+    width: 50%;
+}
+
+.ServicesInfo-container .services-content .icons-container p {
+    font-size: 1rem;
+    color: black;
+}
+
+.ServicesInfo-container .services-content .icons-container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ServicesInfo-container .background-container {
+    background-image: url('/Background 2.png');
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ServicesInfo-container .background-container p {
+    color: white;
+    padding: 20px;
+}
+
+.ServicesInfo-container .background-container .recommend {
+    font-size: 1rem;
+}
+
+.ServicesInfo-container .background-container .name {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2rem;
+}

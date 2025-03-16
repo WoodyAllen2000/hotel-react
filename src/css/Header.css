@@ -1,0 +1,98 @@
+/* header高度设为10% 子容器分列两端 */
+.header-container {
+    height: 10vh;
+    line-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* 设置menu */
+.header-container ul {
+    display: inline-block;
+}
+
+.header-container ul li {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.header-container ul li a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.header-container ul li i {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.header-container ul li a:hover {
+    color:rgb(163, 36, 36)
+}
+
+.logo-container img{
+    height: 10vh;
+}
+
+.header-container button{
+    padding: 15px 40px;
+    background: rgb(163, 36, 36);
+    font-weight: bold;
+    color: white;   
+
+}
+
+/* menu图标，常规状态下隐藏 */
+.header-container span {
+    display: none;
+}
+
+/* 当小屏幕打开网站时，隐藏menu ul，显示menu图标 */
+@media only screen and (max-width: 700px){
+    .header-container ul {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background: rgb(220, 57, 45);
+        height:100vh;
+        text-align: center;
+        z-index: 9;
+    }
+
+    .header-container ul li {
+        display: block;
+    }
+
+    
+    .header-container ul li a {
+        color: white;
+    }
+    
+    .header-container i {
+        color: white;
+    }
+    
+    .header-container span {
+        display: block;
+        cursor: pointer;
+        line-height: 10vh;
+        font-size: 25px;
+    } 
+
+    /* 小屏状态下切换 是否显示menu */
+    .header-container .menulist.closed {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+

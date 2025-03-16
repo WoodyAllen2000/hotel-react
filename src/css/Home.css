@@ -1,0 +1,141 @@
+/* slider 样式 */
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+}
+
+.slider-container .slick-slider {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.slider-container .slick-slider .slick-list {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-container .slick-slider .slick-arrow {
+    background: red;
+    border-radius: 50%;
+    border-color: red solid 1px;
+    color: red;
+    z-index: 8;
+}
+
+.slider-container .slick-slider .slick-arrow.slick-prev {
+    position: absolute;
+    left: 5px;
+    
+}
+.slider-container .slick-slider .slick-arrow.slick-next {
+    position: absolute;
+    right: 5px;
+}
+
+.slider-container .slick-slider .slick-list .slick-track .slick-active {
+    display: flex;
+    justify-content: center;
+}
+
+/* 中间介绍内容样式 */
+.HomeContent-container {
+    position: absolute;
+    left: 4%;
+    top: 30%;
+    color: white;
+    width: 400px;
+}
+
+.HomeContent-container h1 {
+    margin-bottom: 10px;
+}
+
+.HomeContent-container p {
+    margin-bottom: 10px;
+}
+
+.HomeContent-container .btn1 {
+    background: rgb(163, 36, 36);
+    margin-right: 15px;
+    width: 120px;
+    height: 40px;
+    font-size: medium;
+}
+
+.HomeContent-container .btn2 {
+    color: white;
+    border: rgb(228, 34, 34) solid 2px;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.HomeContent-container a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* 预定栏样式 */
+.BookForm-container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(163, 36, 36);
+}
+
+.BookForm-container .instruction {
+    color: white;
+    padding-left: 20px;
+    
+}
+
+.BookForm-container .instruction span {
+    font-weight: bolder;
+    color: rgb(225, 105, 20);
+}
+
+.BookForm-container .form-container {
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BookForm-container .form-container form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.BookForm-container .form-container input {
+    margin-right: 10px;
+    height: 50%;
+}
+
+.BookForm-container .form-container input:nth-last-child(1) {
+    background: rgb(225, 105, 20);
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+
+
+
+
+
+
+
+
+

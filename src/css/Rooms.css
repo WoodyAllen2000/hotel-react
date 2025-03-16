@@ -1,0 +1,39 @@
+.RoomInfo-container .text-container {
+    position: relative;
+    padding: 40px ;
+}
+
+.RoomInfo-container .text-container h1{
+    font-size: 120px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: absolute;
+    top: -20px;
+}
+
+.RoomInfo-container .text-container h2 {
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+    color: rgb(163, 36, 36);
+}
+
+.RoomInfo-container .rooms-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 10px;
+}
+
+.RoomInfo-container .rooms-container .room-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.RoomInfo-container .rooms-container .room-container .book-container h1{
+    color: rgb(163, 36, 36);
+}
+
