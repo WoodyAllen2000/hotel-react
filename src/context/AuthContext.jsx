@@ -1,12 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
 // TODO: BaseUrl
 
 // 判断是否为登录状态
+// 将登录状态保存到localStorage，后续可能要改
 export function AuthProvider({ children }) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(() => {
+        return localStorage.getItem('isLoggedIn') === 'true';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('isLoggedIn', isLoggedIn);
+    }, [isLoggedIn]);
 
     function login() {
         setIsLoggedIn(true);
@@ -14,6 +21,7 @@ export function AuthProvider({ children }) {
 
     function logout() {
         setIsLoggedIn(false);
+        localStorage.clear();
     }
 
     return (
