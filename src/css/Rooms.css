@@ -37,3 +37,31 @@
     color: rgb(163, 36, 36);
 }
 
+.RoomInfo-container .form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    align-items: center;
+    background-color: rgb(163, 36, 36);
+}
+
+.RoomInfo-container .form-container form {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    width: 70%;
+    justify-content: center;
+}
+
+.RoomInfo-container .form-container form input {
+    height: 100%;
+    width: 18%;
+}
+
+.RoomInfo-container .form-container form input:nth-last-child(1) {
+    background: rgb(225, 105, 20);
+    font-weight: bold;
+    padding: 0 2px;
+}

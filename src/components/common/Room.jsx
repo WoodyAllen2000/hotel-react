@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 const Room = ({RoomDetail}) => {
   return (
     <div className='room-container'>
@@ -11,13 +10,6 @@ const Room = ({RoomDetail}) => {
         <img src={RoomDetail.imgSrc}/>
       </div>
 
-      <div className='rate-container'>
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-      </div>
 
       <div className='description-container'>
         <p>{RoomDetail.description}</p>
