@@ -26,10 +26,32 @@ const Rooms = () => {
         setSearchParams(params);
     }, [formData, setSearchParams]);
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
-        // TODO：向后端传递formData，更新房间列表
+        // 向后端传递formData，更新房间列表
+
+        try {
+            const response = await fetch('/roomlist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+    
+            // 这里返回的data要是roomList，符合条件的房间名单，现在用的是预设的
+            const data = await response.json();
+    
+            const roomList = data;
+
+            // TODO: 根据返回的roomList，生成Room组件，room对象的属性见默认
+            console.log(roomList);
+            
+        } catch (error) {
+            console.error(error);  
+        }
+
     }
 
     function handleChange(e) {
