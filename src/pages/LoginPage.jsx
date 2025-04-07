@@ -45,24 +45,26 @@ const LoginPage = () => {
             <h2>Log In</h2>
             <form onSubmit={handleSubmit}>
 
-                {/* 输入邮箱 */}
-                <div className='field-container'>
-                    <label htmlFor='email'>
-                        Email:
-                    </label>
-                    <input type="email" name='email' value={email} onChange={(e) => {
-                        setEmail(e.target.value)
-                    }} required />
-                </div>
+                <div className='border'>
+                    {/* 输入邮箱 */}
+                    <div className='field-container'>
+                        <label htmlFor='email'>
+                            Email:
+                        </label>
+                        <input type="email" name='email' value={email} onChange={(e) => {
+                            setEmail(e.target.value)
+                        }} required />
+                    </div>
 
-                {/* 输入密码 */}
-                <div className='field-container'>
-                    <label htmlFor='password'>
-                        Password:
-                    </label>
-                    <input type="password" name='password' value={password} onChange={(e) => {
-                        setPassword(e.target.value)
-                    }} required />
+                    {/* 输入密码 */}
+                    <div className='field-container'>
+                        <label htmlFor='password'>
+                            Password:
+                        </label>
+                        <input type="password" name='password' value={password} onChange={(e) => {
+                            setPassword(e.target.value)
+                        }} required />
+                    </div>
                 </div>
 
                 <div className='btn-container'>

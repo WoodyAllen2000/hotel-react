@@ -34,9 +34,8 @@
 }
 
 .login-container .internal-container form {
-    height: 65%;
+    height: 50%;
     width: 80%;
-
 }
 
 .login-container .internal-container form .field-container {
@@ -67,6 +66,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.login-container .internal-container .border {
+    border: 2px solid rgb(163, 36, 36);
+    border-radius: 10%;
+    padding: 5%;
 }
 
 

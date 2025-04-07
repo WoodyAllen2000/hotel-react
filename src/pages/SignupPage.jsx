@@ -14,7 +14,6 @@ const SignupPage = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    // TODO：将表单发送到后端
     try {
       const response = await fetch("/auth/signup", {
         method: 'POST',
@@ -50,6 +49,7 @@ const SignupPage = () => {
 
         <form onSubmit={handleSubmit}>
 
+          <div className='border'>
           {/* 输入邮箱 */}
           <div className='field-container'>
             <label htmlFor='email'>
@@ -78,6 +78,7 @@ const SignupPage = () => {
             <input type="password" name='confirmedPassword' value={confirmedPassword} onChange={(e) => {
               setConfirmedPassword(e.target.value);
             }} required />
+          </div>
           </div>
 
           <div className='btn-container'>

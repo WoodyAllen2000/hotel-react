@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import '../../css/Header.css';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
+  const navigate = useNavigate();
 
   function toggleMenu() {
     setShowMenu(!showMenu);
@@ -25,8 +26,10 @@ const Header = () => {
               <li><Link to='/services'>services</Link></li>
               <li><Link to='/contact'>contact</Link></li>
               {/* 搜索图标 */}
-              <li><i class="fa fa-search"></i></li> 
-              <li><button>BOOK NOW</button></li>
+              <li><Link to='/login'><i class="fa fa-user"></i></Link></li> 
+              <li><button onClick={() => {
+                navigate('/rooms')
+              }}>BOOK NOW</button></li>
            </ul>
            {/* 三横菜单图标 */}
            <span className="fa fa-bars" onClick={toggleMenu}></span>
