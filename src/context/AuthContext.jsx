@@ -50,7 +50,7 @@ export function AuthProvider({ children }) {
         }
     }
 
-    async function signup(email, password) {
+    async function signup(name, email, password) {
         try {
             const response = await fetch("auth/signup", {
                 method: 'POST',

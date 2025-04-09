@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../css/Signup.css'
 
 const SignupPage = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
@@ -17,7 +18,7 @@ const SignupPage = () => {
     if (password !== confirmedPassword) {
       alert('密码不一致');
     } else {
-      signup(email, password);
+      signup(name, email, password);
     }
 
     console.log("Sign Up");
@@ -35,6 +36,17 @@ const SignupPage = () => {
         <form onSubmit={handleSubmit}>
 
           <div className='border'>
+
+          {/* 输入名字 */}
+          <div className='field-container'>
+            <label htmlFor='name'>
+              Name:
+            </label>
+            <input type="text" name='name' value={email} onChange={(e) => {
+              setEmail(e.target.value);
+            }} required />
+          </div>
+
           {/* 输入邮箱 */}
           <div className='field-container'>
             <label htmlFor='email'>
