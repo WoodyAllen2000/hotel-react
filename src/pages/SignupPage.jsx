@@ -9,30 +9,15 @@ const SignupPage = () => {
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
 
-  const { login } = useContext(AuthContext);
+  const { signup } = useContext(AuthContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      const response = await fetch("/auth/signup", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json;
-
-      if (response.ok) {
-        login();
-      } else {
-        alert(data.message || "Something wrong");
-      }
-
-    } catch (error) {
-      console.error(error);
+    if (password !== confirmedPassword) {
+      alert('密码不一致');
+    } else {
+      signup(email, password);
     }
 
     console.log("Sign Up");

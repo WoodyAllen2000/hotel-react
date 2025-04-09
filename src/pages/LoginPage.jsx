@@ -12,28 +12,7 @@ const LoginPage = () => {
 
     async function handleSubmit(e) {
         e.preventDefault();
-
-        // 将邮箱密码发送至后端
-        try {
-            const response = await fetch("/auth/login", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({email, password}),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                login();
-            } else {
-                alert(data.message || "Something Wrong");
-            }
-
-        } catch (error) {
-            console.error(error);
-        }
+        login(email, password);
         console.log("log in");
     }
 

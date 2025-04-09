@@ -11,24 +11,77 @@ export function AuthProvider({ children }) {
         return localStorage.getItem('isLoggedIn') === 'true';
     });
 
+    const [user, setUser] = useState(() => {
+        const savedUser = localStorage.getItem('user');
+        return savedUser ? JSON.parse(savedUser) : null;
+    });
+
     useEffect(() => {
         localStorage.setItem('isLoggedIn', isLoggedIn);
-    }, [isLoggedIn]);
+        if (isLoggedIn) {
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+    }, [isLoggedIn, user]);
 
-    function login() {
-        setIsLoggedIn(true);
+    async function login(email, password) {
+        try {
+            const response = await fetch("/auth/login", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            // 接受数据
+            const data = await response.json();
+
+            if (response.ok) {
+                // 后端验证后，将用户对象返回到前端
+                // TODO: 这里后续再去确认吧
+                setUser(data.user);
+                setIsLoggedIn(true);
+            } else {
+                alert(data.message || "Something Wrong");
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async function signup(email, password) {
+        try {
+            const response = await fetch("auth/signup", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setUser(data.user);
+                setIsLoggedIn(true);
+            } else {
+                alert(data.message || "Something Wrong");
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     function logout() {
         setIsLoggedIn(false);
-        localStorage.clear();
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('user');
     }
 
     return (
-        <AuthContext.Provider value={ {isLoggedIn, login, logout} } >
+        <AuthContext.Provider value={{ isLoggedIn, user, login, logout, signup }}>
             {children}
         </AuthContext.Provider>
     );
 }
-
-// TODO：快速刷新问题，这个文件不是只导出组件
