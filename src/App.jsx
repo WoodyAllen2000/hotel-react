@@ -12,14 +12,12 @@ import SignupPage from './pages/SignupPage';
 import Dashboard from './pages/admin/Dashboard';
 import Rooms from './pages/admin/Rooms';
 import Orders from './pages/admin/Orders';
-import Users from './pages/admin/Users';
-import Settings from './pages/admin/Settings';
 import AdminLogin from './pages/admin/AdminLogin';
 
 // 管理员路由保护组件
 const AdminRoute = ({ children }) => {
-  const adminToken = localStorage.getItem('adminToken');
-  return adminToken ? children : <Navigate to="/admin/login" />;
+  const admin = localStorage.getItem('admin');
+  return admin ? children : <Navigate to="/admin/login" />;
 };
 
 function App() {
@@ -55,16 +53,7 @@ function App() {
                 <Orders />
               </AdminRoute>
             }/>
-            <Route path='/admin/users' element={
-              <AdminRoute>
-                <Users />
-              </AdminRoute>
-            }/>
-            <Route path='/admin/settings' element={
-              <AdminRoute>
-                <Settings />
-              </AdminRoute>
-            }/>
+
           </Routes>
         </Router>
     </>
