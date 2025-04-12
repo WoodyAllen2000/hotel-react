@@ -14,7 +14,7 @@ import Rooms from './pages/admin/Rooms';
 import Orders from './pages/admin/Orders';
 import AdminLogin from './pages/admin/AdminLogin';
 
-// 管理员路由保护组件
+// 管理员路由保护中间件
 const AdminRoute = ({ children }) => {
   const admin = localStorage.getItem('admin');
   return admin ? children : <Navigate to="/admin/login" />;

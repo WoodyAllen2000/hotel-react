@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, theme, Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,6 +45,25 @@ const columns = [
 ];
 
 const Orders = () => {
+  const [orderData, setOrderData] = useState([]);
+
+  async function fetchOrders() {
+    try {
+      const response = await fetch('admin/orders');
+      if (!response.ok) {
+        throw new Error('Failed to fetch orders');
+      }
+
+      const data = await response.json();
+
+      // 设置为真实房间数据
+      setOrderData(data);
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   const navigate = useNavigate();
 
   const {
@@ -80,7 +99,7 @@ const Orders = () => {
           >
             <Table
               columns={columns}
-              dataSource={orderData}
+              dataSource={orderData_fake} // 后面换成真实数据
               pagination={{ pageSize: 12 }}
               rowKey="key"
             />
@@ -98,7 +117,7 @@ const Orders = () => {
 export default Orders; 
 
 // 模拟订单数据
-const orderData = [
+const orderData_fake = [
   {
     key: '1',
     id: '1001',

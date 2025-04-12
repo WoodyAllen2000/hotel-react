@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, Menu, theme, Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -40,6 +40,33 @@ const columns = [
 ];
 
 const Rooms = () => {
+  const [roomData, setRoomData] = useState([]);
+
+  async function fetchRooms() {
+    try {
+      const response = await fetch('admin/rooms');
+      if (!response.ok) {
+        throw new Error('Failed to fetch rooms');
+      }
+
+      const data = await response.json();
+
+      // 设置为真实房间数据
+      setRoomData(data);
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    try {
+      
+    } catch (error) {
+      
+    }
+  })
+
   const navigate = useNavigate();
 
   const {
@@ -75,7 +102,8 @@ const Rooms = () => {
           >
             <Table
               columns={columns}
-              dataSource={roomData}
+              // 后面要换成真实数据
+              dataSource={roomData_fake} 
               pagination={{ pageSize: 10 }}
               rowKey="key"
             />
@@ -93,7 +121,7 @@ const Rooms = () => {
 export default Rooms; 
 
 // 模拟房间数据
-const roomData = [
+const roomData_fake = [
   {
     key: '1',
     roomNumber: '101',

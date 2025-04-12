@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, theme, Card, Col, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 const items = [
   { label: 'Dashboard', path: '/admin' },
@@ -16,6 +16,29 @@ const items = [
 
 
 const Dashboard = () => {
+  const [revenue, setRevenue] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
+  const [roomUsage, setRoomUsage] = useState(0);
+
+  async function fetchBoardData() {
+    try {
+      const response = await fetch('admin/dashboard');
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch board data');
+      }
+
+      const { revenue, orderCount, roomUsage } = await response.json();
+
+      // 设置为真实看板数据
+      setRevenue(revenue);
+      setOrderCount(orderCount);
+      setRoomUsage(roomUsage);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   const navigate = useNavigate();
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -51,16 +74,19 @@ const Dashboard = () => {
             <Row gutter={[16, 16]} justify="center">
                 <Col xs={24} sm={12} md={8}>
                   <Card title="Total Revenue" variant="borderless">
-                    <p>¥ 12,345</p>
+                    {/* 后续要改为真实 revenue */}
+                    <p>¥ 12,345</p> 
                   </Card>
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                   <Card title="Order Count" variant="borderless">
+                    {/* 后续要改为真实 orderCount */}
                     <p>150</p>
                   </Card>
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                   <Card title="Room Usage" variant="borderless">
+                    {/* 后续要改为真实 roomUsage */}
                     <p>85%</p>
                   </Card>
                 </Col>

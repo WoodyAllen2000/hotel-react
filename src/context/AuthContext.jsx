@@ -42,7 +42,7 @@ export function AuthProvider({ children }) {
                 setUser(data.user);
                 setIsLoggedIn(true);
             } else {
-                alert(data.message || "Something Wrong");
+                alert("Something Wrong");
             }
 
         } catch (error) {
@@ -66,7 +66,7 @@ export function AuthProvider({ children }) {
                 setUser(data.user);
                 setIsLoggedIn(true);
             } else {
-                alert(data.message || "Something Wrong");
+                alert("Something Wrong");
             }
         } catch (error) {
             console.error(error);

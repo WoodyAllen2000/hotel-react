@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input, message} from 'antd';
-import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.get('admin')) {
+      navigate('/admin')
+    }
+  })
+
   const handleFinish = async values => {
 
     try {

@@ -58,6 +58,15 @@ const LoginPage = () => {
                         </Link>
                     </p>
                 </div>
+
+                {/* 进入管理员登录界面 */}
+                <div className='p-container'>
+                    <p>
+                        <Link to='/admin/login'>
+                            I am admin.
+                        </Link>
+                    </p>
+                </div>
             </form>
         </div>
       </div>
