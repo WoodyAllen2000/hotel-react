@@ -44,14 +44,14 @@ function App() {
               // </AdminRoute>
             }/>
             <Route path='/admin/rooms' element={
-              <AdminRoute>
+              // <AdminRoute>
                 <Rooms />
-              </AdminRoute>
+              // </AdminRoute>
             }/>
             <Route path='/admin/orders' element={
-              <AdminRoute>
+              // <AdminRoute>
                 <Orders />
-              </AdminRoute>
+              // </AdminRoute>
             }/>
 
           </Routes>

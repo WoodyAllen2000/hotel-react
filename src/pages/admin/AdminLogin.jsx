@@ -34,33 +34,64 @@ const AdminLogin = () => {
   };
 
   return (
-    <Form
-      name="login"
-      initialValues={{ remember: true }}
-      style={{ maxWidth: 360 }}
-      onFinish={handleFinish}
-      size='large'
+<div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: '#f0f2f5', 
+      }}
     >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
+      <Form
+        name="login"
+        initialValues={{ remember: true }}
+        style={{
+          maxWidth: 700,
+          padding: '40px',
+          background: '#fff',
+          borderRadius: 8,
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', 
+        }}
+        onFinish={handleFinish}
+        size="large"
       >
-        <Input prefix={<UserOutlined />} placeholder="Username" />
-      </Form.Item>
+        <Form.Item
+          name="username"
+          rules={[{ required: true, message: 'Please input your Username!' }]}
+          style={{ marginBottom: 32 }} 
+        >
+          <Input
+            prefix={<UserOutlined />}
+            placeholder="Username"
+            style={{ height: 50, fontSize: 18 }} 
+          />
+        </Form.Item>
 
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
-      >
-        <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
-      </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[{ required: true, message: 'Please input your Password!' }]}
+          style={{ marginBottom: 32 }}
+        >
+          <Input.Password
+            prefix={<LockOutlined />}
+            placeholder="Password"
+            style={{ height: 50, fontSize: 18 }}
+          />
+        </Form.Item>
 
-      <Form.Item>
-        <Button block type="primary" htmlType="submit">
-          Log in
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item>
+          <Button
+            block
+            type="primary"
+            htmlType="submit"
+            style={{ height: 50, fontSize: 18 }} 
+          >
+            Log in
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
   );
 };
 
