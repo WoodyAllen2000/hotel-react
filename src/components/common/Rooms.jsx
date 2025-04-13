@@ -103,72 +103,80 @@ const RoomList = [
     {
         id: 1,
         name: 'single room',
+        roomNumber: '301',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 1.png'
     },
-
+  
     {
         id: 2,
         name: 'single room',
+        roomNumber: '505',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 2.png'
     },
-
+  
     {
         id: 3,
         name: 'single room',
+        roomNumber: '310',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 3.png'
     },
-
+  
     {
         id: 4,
         name: 'single room',
+        roomNumber: '201',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 4.png'
     },
-
+  
     {
         id: 5,
         name: 'single room',
+        roomNumber: '234',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 5.png'
     },
-
+  
     {
         id: 6,
         name: 'single room',
+        roomNumber: '402',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 6.png'
     },
-
+  
     {
         id: 7,
         name: 'single room',
+        roomNumber: '307',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 7.png'
     },
-
+  
     {
         id: 8,
         name: 'single room',
+        roomNumber: '308',
         description: 'very good very good very good very good very good room',
         price: 250,
         status: 'Available',
         imgSrc: '/Room 8.png'
     },
-];
+  ];
