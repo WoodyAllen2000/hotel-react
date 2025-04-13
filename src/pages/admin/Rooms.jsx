@@ -23,8 +23,8 @@ const columns = [
   },
   {
     title: 'Type',
-    dataIndex: 'type',
-    key: 'type',
+    dataIndex: 'name',
+    key: 'name',
   },
   {
     title: 'Status',
@@ -60,11 +60,7 @@ const Rooms = () => {
   }
 
   useEffect(() => {
-    try {
-      
-    } catch (error) {
-      
-    }
+    fetchRooms();
   })
 
   const navigate = useNavigate();
@@ -103,7 +99,7 @@ const Rooms = () => {
             <Table
               columns={columns}
               // 后面要换成真实数据
-              dataSource={roomData_fake} 
+              dataSource={RoomList} 
               pagination={{ pageSize: 10 }}
               rowKey="key"
             />
@@ -121,54 +117,86 @@ const Rooms = () => {
 export default Rooms; 
 
 // 模拟房间数据
-const roomData_fake = [
+
+const RoomList = [
   {
-    key: '1',
-    roomNumber: '101',
-    type: 'Big Bed Room',
-    status: 'Available',
-    price: 300,
+      id: 1,
+      name: 'single room',
+      roomNumber: '301',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 1.png'
   },
+
   {
-    key: '2',
-    roomNumber: '102',
-    type: 'Twin Bed Room',
-    status: 'Occupied',
-    price: 350,
+      id: 2,
+      name: 'single room',
+      roomNumber: '505',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 2.png'
   },
+
   {
-    key: '3',
-    roomNumber: '201',
-    type: 'Deluxe Big Bed Room',
-    status: 'Available',
-    price: 500,
+      id: 3,
+      name: 'single room',
+      roomNumber: '310',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 3.png'
   },
+
   {
-    key: '4',
-    roomNumber: '202',
-    type: 'Deluxe Twin Bed Room',
-    status: 'Occupied',
-    price: 550,
+      id: 4,
+      name: 'single room',
+      roomNumber: '201',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 4.png'
   },
+
   {
-    key: '5',
-    roomNumber: '301',
-    type: 'Suite',
-    status: 'Available',
-    price: 800,
+      id: 5,
+      name: 'single room',
+      roomNumber: '234',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 5.png'
   },
+
   {
-    key: '6',
-    roomNumber: '302',
-    type: 'Big Bed Room',
-    status: 'Occupied',
-    price: 300,
+      id: 6,
+      name: 'single room',
+      roomNumber: '402',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 6.png'
   },
+
   {
-    key: '7',
-    roomNumber: '303',
-    type: 'Twin Bed Room',
-    status: 'Available',
-    price: 350,
+      id: 7,
+      name: 'single room',
+      roomNumber: '307',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 7.png'
+  },
+
+  {
+      id: 8,
+      name: 'single room',
+      roomNumber: '308',
+      description: 'very good very good very good very good very good room',
+      price: 250,
+      status: 'Available',
+      imgSrc: '/Room 8.png'
   },
 ];
+  

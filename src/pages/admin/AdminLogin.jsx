@@ -7,7 +7,7 @@ const AdminLogin = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.get('admin')) {
+    if (localStorage.getItem('admin')) {
       navigate('/admin')
     }
   })
@@ -27,7 +27,7 @@ const AdminLogin = () => {
         const data = await response.json();
 
         // 后端会返回admin
-        const { admin } = data;
+        const admin = data;
   
         // 保存到localStorage，维持登录状态 （这个有时间要改掉，容易伪造）
         localStorage.setItem('admin', JSON.stringify(admin));
@@ -38,7 +38,6 @@ const AdminLogin = () => {
     } catch (error) {
       console.error(error);
     }
-
   };
 
   return (
@@ -65,13 +64,13 @@ const AdminLogin = () => {
         size="large"
       >
         <Form.Item
-          name="username"
-          rules={[{ required: true, message: 'Please input your Username!' }]}
+          name="adminName"
+          rules={[{ required: true, message: 'Please input your name!' }]}
           style={{ marginBottom: 32 }} 
         >
           <Input
             prefix={<UserOutlined />}
-            placeholder="Username"
+            placeholder="adminName"
             style={{ height: 50, fontSize: 18 }} 
           />
         </Form.Item>

@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
             if (response.ok) {
                 // 后端验证后，将用户对象返回到前端
                 // TODO: 这里后续再去确认吧
-                setUser(data.user);
+                setUser(data);
                 setIsLoggedIn(true);
             } else {
                 alert("Something Wrong");
@@ -57,13 +57,13 @@ export function AuthProvider({ children }) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ name, email, password })
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                setUser(data.user);
+                setUser(data);
                 setIsLoggedIn(true);
             } else {
                 alert("Something Wrong");

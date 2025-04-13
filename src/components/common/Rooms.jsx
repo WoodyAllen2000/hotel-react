@@ -104,7 +104,8 @@ const RoomList = [
         id: 1,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 1.png'
     },
 
@@ -112,7 +113,8 @@ const RoomList = [
         id: 2,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 2.png'
     },
 
@@ -120,7 +122,8 @@ const RoomList = [
         id: 3,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 3.png'
     },
 
@@ -128,7 +131,8 @@ const RoomList = [
         id: 4,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 4.png'
     },
 
@@ -136,7 +140,8 @@ const RoomList = [
         id: 5,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 5.png'
     },
 
@@ -144,7 +149,8 @@ const RoomList = [
         id: 6,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 6.png'
     },
 
@@ -152,7 +158,8 @@ const RoomList = [
         id: 7,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 7.png'
     },
 
@@ -160,7 +167,8 @@ const RoomList = [
         id: 8,
         name: 'single room',
         description: 'very good very good very good very good very good room',
-        price: '$250',
+        price: 250,
+        status: 'Available',
         imgSrc: '/Room 8.png'
     },
 ];

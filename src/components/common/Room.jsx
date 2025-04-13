@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const Room = ({RoomDetail}) => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const roomId = RoomDetail.id;
 
@@ -25,6 +27,8 @@ const Room = ({RoomDetail}) => {
       }
       const data = await response.json();
       message.success('Book successfully!');
+      navigate('/');
+
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -46,7 +50,7 @@ const Room = ({RoomDetail}) => {
       </div>
 
       <div className='book-container'>
-        <h1>{RoomDetail.price}</h1>
+        <h1>{"¥"+RoomDetail.price}</h1>
       </div>
 
       <div>
