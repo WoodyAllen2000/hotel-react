@@ -15,7 +15,7 @@ const AdminLogin = () => {
   const handleFinish = async values => {
 
     try {
-      const response = await fetch('admin/login', {
+      const response = await fetch('/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

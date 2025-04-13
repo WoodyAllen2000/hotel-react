@@ -49,7 +49,7 @@ const Orders = () => {
 
   async function fetchOrders() {
     try {
-      const response = await fetch('admin/orders');
+      const response = await fetch('/admin/orders');
       if (!response.ok) {
         throw new Error('Failed to fetch orders');
       }

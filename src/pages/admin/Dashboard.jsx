@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   async function fetchBoardData() {
     try {
-      const response = await fetch('admin/dashboard');
+      const response = await fetch('/admin/dashboard');
 
       if (!response.ok) {
         throw new Error('Failed to fetch board data');

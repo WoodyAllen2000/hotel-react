@@ -44,7 +44,7 @@ const Rooms = () => {
 
   async function fetchRooms() {
     try {
-      const response = await fetch('admin/rooms');
+      const response = await fetch('/admin/rooms');
       if (!response.ok) {
         throw new Error('Failed to fetch rooms');
       }
