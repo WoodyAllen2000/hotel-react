@@ -13,6 +13,7 @@ import Dashboard from './pages/admin/Dashboard';
 import Rooms from './pages/admin/Rooms';
 import Orders from './pages/admin/Orders';
 import AdminLogin from './pages/admin/AdminLogin';
+import OrderForUserPage from './pages/OrderForUserPage';
 
 // 管理员路由保护中间件
 const AdminRoute = ({ children }) => {
@@ -35,6 +36,7 @@ function App() {
             <Route path='/contact' element={<ContactPage />}/>
             <Route path='/login' element={ !isLoggedIn ? <LoginPage /> : <Navigate to='/' /> }/>
             <Route path='/signup' element={ !isLoggedIn ? <SignupPage /> : <Navigate to='/' /> }/>
+            <Route path='/orders' element={ isLoggedIn ? <OrderForUserPage /> : <Navigate to='/login' /> }/>
             
             {/* 管理员路由 */}
             <Route path='/admin/login' element={<AdminLogin />}/>

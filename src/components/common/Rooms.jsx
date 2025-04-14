@@ -29,6 +29,12 @@ const Rooms = () => {
     async function handleSubmit(e) {
         e.preventDefault();
 
+        //      
+        if (formData.checkin >= formData.checkout || formData.adults <= 0 || formData.children < 0) {
+            alert('wrong submit data');
+            return;
+        }
+
         // 向后端传递formData，更新房间列表
 
         try {
